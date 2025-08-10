@@ -1,0 +1,24 @@
+{
+  "name": "inok/phpagi",
+  "description": "PHPAGI is a PHP class for the Asterisk Gateway Interface.",
+  "type": "library",
+  "keywords": [
+    "asterisk",
+    "ami",
+    "agi"
+  ],
+  "homepage": "http://blog.kgd.in",
+  "license": "LGPL-2.1-or-later",
+  "version": "1.0.2",
+  "autoload": {
+    "psr-4": {
+      "Inok\\phpagi\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=7.0 || ~8.0.0",
+    "ext-posix": "*",
+    "ext-sockets": "*",
+    "ext-mbstring": "*"
+  }
+}

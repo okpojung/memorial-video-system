@@ -1,0 +1,36 @@
+version: "3.7"
+services:
+    mvs:
+        build:
+            args:
+                user: mvs
+                uid: 1000
+            context: ./
+            dockerfile: Dockerfile
+        image: mvs
+        container_name: mvs-app
+        restart: unless-stopped
+        working_dir: /var/www/
+        volumes:
+            - ./:/var/www
+#            - /home/videos:/var/www/public/mvs
+
+    nginx:
+        image: nginx:stable-alpine
+        container_name: mvs-nginx
+        restart: unless-stopped
+        expose:
+            - 8100
+        ports:
+            - "8100:8100"
+        volumes:
+            - ./:/var/www
+            - ./docker/nginx:/etc/nginx/conf.d/
+        environment:
+            - VIRTUAL_HOST=mvs.wedt.kr
+            - VIRTUAL_PORT=8100
+
+networks:
+    default:
+        external:
+            name: nginx-proxy

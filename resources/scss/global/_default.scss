@@ -1,0 +1,23 @@
+body {
+  font-family: 'paypal', Helvetica Neue, Arial, sans-serif;
+  //font-family: 'jeju', Helvetica Neue, Arial, sans-serif;
+  //font-family: 'goyang-b', Helvetica Neue, Arial, sans-serif;
+  //font-family: 'goyang-eb', Helvetica Neue, Arial, sans-serif;
+  //font-family: 'goyang-ll-l', Helvetica Neue, Arial, sans-serif;
+  //font-family: 'goyang-ll-r', Helvetica Neue, Arial, sans-serif;
+  //font-family: 'nanum', Helvetica Neue, Arial, sans-serif;
+}
+html, #__nuxt, body {
+
+}
+
+#__nuxt {
+}
+body {
+    background-color: $main-bg;
+  color:$main-text-color;
+}
+
+.border-t-transparent {
+  border-top:none !important;
+}

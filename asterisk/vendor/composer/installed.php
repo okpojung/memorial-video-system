@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => '__root__',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => NULL,
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => NULL,
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'inok/phpagi' => array(
+            'pretty_version' => '1.0.2',
+            'version' => '1.0.2.0',
+            'reference' => '78da8a19aa8ceae8a2a50e624e9f64bbc9190b48',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../inok/phpagi',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'welltime/phpagi' => array(
+            'pretty_version' => '2.20.1',
+            'version' => '2.20.1.0',
+            'reference' => '00436062cc807e96b01050d9fdc20e2e3b07fd4f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../welltime/phpagi',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);

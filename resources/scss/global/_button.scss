@@ -1,0 +1,21 @@
+//.form-btn {
+//  background-color:$wedt-btn-bg;
+//  color:$wedt-btn-text;
+//
+//  &:hover {
+//    background-color:$wedt-hover-btn-bg;
+//    color:$wedt-hover-btn-text;
+//  }
+//}
+
+.form-btn {
+  background-color:$form-btn-bg;
+  color:$form-btn-text;
+  font-weight: bold;
+  //box-shadow: 0 1.5px 9px 0 rgba(0,0,0,0.2);
+
+  &:hover {
+    background-color:$form-hover-btn-bg;
+    color:$form-hover-btn-text;
+  }
+}

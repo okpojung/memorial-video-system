@@ -1,0 +1,102 @@
+.main-text {
+  color: $main-text-color;
+}
+
+.text-main {
+  color: $main-text-color;
+}
+
+.sub-menu-text {
+  color:blanchedalmond !important;
+}
+
+.main-color {
+  color: $main-color
+}
+.main-color-hover:hover {
+  color:$main-color;
+}
+.main-border {
+  border: 1px solid $main-color;
+}
+
+.sub-bg {
+  background-color: $main-bg;
+}
+
+.main-bg {
+  background-color: $main-color;
+}
+
+.main-bg-hover:hover {
+  background-color: #555;
+  color: #FFFFFF;
+}
+
+.black-border {
+  border: 1px solid #555;
+}
+.black-color-bg {
+  background-color: #555;
+}
+
+.black-color-bg-hover:hover {
+  border: 1px solid #555;
+  color: #555;
+  background-color: white;
+}
+
+.white-color-bg {
+  background-color: #FFFFFF;
+}
+
+.white-color-bg-hover:hover {
+  border: 1px solid #555;
+  color: #FFFFFF;
+  background-color: #555;
+}
+
+.link-color {
+  color:$link-color;
+}
+.link-bg {
+  background-color:$link-color;
+}
+
+.required-color {
+  color:#ed143d;
+}
+
+.text-success {
+  color:#0e9f6e;
+}
+
+.text-error {
+  color:#f98080;
+}
+
+.green-bg {
+  background-color: $green-color;
+}
+
+.green-bg-hover:hover {
+  background-color: #FFFFFF;
+  color: $green-color;
+}
+
+.green-border {
+  border: 1px solid $green-color;
+}
+
+.green-color {
+  color: $green-color;
+}
+
+.readonly{
+  background-color: #f0f0f0 !important;
+
+}
+
+.test {
+    background-color: firebrick;
+}

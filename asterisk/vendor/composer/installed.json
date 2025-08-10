@@ -1,0 +1,87 @@
+{
+    "packages": [
+        {
+            "name": "inok/phpagi",
+            "version": "1.0.2",
+            "version_normalized": "1.0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nchizhov/inok-phpagi.git",
+                "reference": "78da8a19aa8ceae8a2a50e624e9f64bbc9190b48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nchizhov/inok-phpagi/zipball/78da8a19aa8ceae8a2a50e624e9f64bbc9190b48",
+                "reference": "78da8a19aa8ceae8a2a50e624e9f64bbc9190b48",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "ext-posix": "*",
+                "ext-sockets": "*",
+                "php": ">=7.0 || ~8.0.0"
+            },
+            "time": "2021-03-25T11:27:46+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Inok\\phpagi\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1-or-later"
+            ],
+            "description": "PHPAGI is a PHP class for the Asterisk Gateway Interface.",
+            "homepage": "http://blog.kgd.in",
+            "keywords": [
+                "agi",
+                "ami",
+                "asterisk"
+            ],
+            "support": {
+                "issues": "https://github.com/nchizhov/inok-phpagi/issues",
+                "source": "https://github.com/nchizhov/inok-phpagi/tree/1.0.2"
+            },
+            "install-path": "../inok/phpagi"
+        },
+        {
+            "name": "welltime/phpagi",
+            "version": "2.20.1",
+            "version_normalized": "2.20.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/welltime/phpagi.git",
+                "reference": "00436062cc807e96b01050d9fdc20e2e3b07fd4f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/welltime/phpagi/zipball/00436062cc807e96b01050d9fdc20e2e3b07fd4f",
+                "reference": "00436062cc807e96b01050d9fdc20e2e3b07fd4f",
+                "shasum": ""
+            },
+            "time": "2019-04-15T09:13:08+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    "src/phpagi.php",
+                    "src/phpagi-asmanager.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1-or-later"
+            ],
+            "description": "PHPAGI is a PHP class for the Asterisk Gateway Interface.",
+            "support": {
+                "issues": "https://github.com/welltime/phpagi/issues",
+                "source": "https://github.com/welltime/phpagi/tree/2.20.1"
+            },
+            "install-path": "../welltime/phpagi"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

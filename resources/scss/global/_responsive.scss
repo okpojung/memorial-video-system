@@ -1,0 +1,17 @@
+// Responsive Variables
+$xl-device : 'only screen and (min-width: 1500px) and (max-width: 1599px)';
+$laptop-device : 'only screen and (min-width: 1200px) and (max-width: 1499px)';
+$desktop-device : 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$tablet-device:'only screen and (min-width: 768px) and (max-width: 991px)';
+
+
+$min-laptop-device : 'only screen and (min-width: 1200px)';
+$max-desktop-device:'only screen and (max-width: 991px)';
+$min-desktop-device:'only screen and (min-width: 992px)';
+$min-tablet-device:'only screen and (min-width: 1200px)';
+$max-tablet-device:'only screen and (max-width: 1199px)';
+$min-large-mobile:'only screen and (min-width: 768px)';
+$large-mobile:'only screen and (max-width: 767px)';
+$small-mobile: 'only screen and (max-width: 575px)';
+$min-small-mobile:'only screen and (min-width: 576px)';
+$extra-small-mobile: 'only screen and (max-width: 479px)';

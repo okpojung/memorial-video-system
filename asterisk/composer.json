@@ -1,0 +1,6 @@
+{
+    "require": {
+        "inok/phpagi": "^1.0",
+        "welltime/phpagi": "^2.20"
+    }
+}
