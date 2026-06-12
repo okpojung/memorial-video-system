@@ -67,23 +67,40 @@ class MvsController extends Controller
         return strlen($response);
     }
 
-    public function index()
+    public function index(Request $request)
     {
         if(!(boolean) MvsAuth::flag()) {
             echo '서비스가 중지되었습니다';
             exit();
         }
         $socket = $this->socketCheck() !== 0 ? true : false;
-        return view('mvs.index',['socket' => $socket]);
+        $terminalNo = (int) $request->query('terminal', 0);
+        $terminalKey = $terminalNo >= 1 && $terminalNo <= 9 ? 'terminal-' . $terminalNo : null;
+
+        return view('mvs.index', [
+            'socket' => $socket,
+            'terminalNo' => $terminalNo,
+            'terminalKey' => $terminalKey,
+            'socketHost' => rtrim((string) env('SOCKET_HOST'), '/'),
+        ]);
     }
-    public function pc()
+
+    public function pc(Request $request)
     {
         if(!(boolean) MvsAuth::flag()) {
             echo '서비스가 중지되었습니다';
             exit();
         }
         $socket = $this->socketCheck() !== 0 ? true : false;
-        return view('mvs.pc',['socket' => $socket]);
+        $terminalNo = (int) $request->query('terminal', 0);
+        $terminalKey = $terminalNo >= 1 && $terminalNo <= 9 ? 'terminal-' . $terminalNo : null;
+
+        return view('mvs.pc', [
+            'socket' => $socket,
+            'terminalNo' => $terminalNo,
+            'terminalKey' => $terminalKey,
+            'socketHost' => rtrim((string) env('SOCKET_HOST'), '/'),
+        ]);
     }
 
     public function dashboard()
