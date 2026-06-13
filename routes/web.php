@@ -27,6 +27,7 @@ Route::GET(     '/pc',                                  [App\Http\Controllers\Mv
  ** AUTH
  **********************/
 Route::POST(    '/find',                                [App\Http\Controllers\AuthController::class,'find'])->name('auth.find');
+Route::GET(     '/admin',                               [App\Http\Controllers\AuthController::class,'index'])->name('login');
 Route::GET(    '/login',                                [App\Http\Controllers\AuthController::class,'index'])->name('auth.index');
 Route::POST(    '/login',                               [App\Http\Controllers\AuthController::class,'login'])->name('auth.login');
 Route::POST(    '/logout',                              [App\Http\Controllers\AuthController::class,'logout'])->name('auth.logout');
@@ -63,6 +64,10 @@ Route::DELETE( '/customers/video/{id}',                 [App\Http\Controllers\Cu
 Route::GET('/dashboard',                                [App\Http\Controllers\MvsController::class,'dashboard'])->name('dashboard');
 Route::GET('/video',                                    [App\Http\Controllers\MvsController::class,'retrieve']);
 Route::GET('/flag',                                     [App\Http\Controllers\MvsController::class,'flag']);
+Route::GET('/playback-management',                      [App\Http\Controllers\PlaybackManagementController::class,'index'])->middleware('auth')->name('playback-management.index');
+Route::GET('/playback-management/search',               [App\Http\Controllers\PlaybackManagementController::class,'search'])->middleware('auth')->name('playback-management.search');
+Route::POST('/playback-management/play',                [App\Http\Controllers\PlaybackManagementController::class,'play'])->middleware('auth')->name('playback-management.play');
+Route::POST('/terminal/status',                         [App\Http\Controllers\PlaybackManagementController::class,'terminalStatus'])->name('terminal.status');
 
 /*********************
  ** VIDEO

@@ -165,11 +165,16 @@
         let customerIsOpen = false;
 
         const playVideo = document.querySelector('#playVideo');
+        const terminalKey = @json($terminalKey ?? null);
+        const terminalNo = @json($terminalNo ?? null);
+        const statusUrl = @json(route('terminal.status'));
+        const csrfToken = @json(csrf_token());
 
         playVideo.addEventListener('ended', (event) => {
             document.querySelector('#image-wrap').style.display = 'block';
             document.querySelector('#header').style.display = 'block';
             document.querySelector('#video-wrap').style.display = 'none';
+            publishTerminalStatus('ended');
         });
 
 
@@ -250,7 +255,7 @@
     </script>
 
 
-    <script src="http://192.168.94.101:6001/socket.io/socket.io.js"></script>
+    <script src="{{ $socketHost }}/socket.io/socket.io.js"></script>
     <script>
         // console.dir(document.querySelector('#video'));
 
@@ -258,12 +263,20 @@
 
         let videoData;
 
-        var socket = io.connect('192.168.94.101:6001',{
+        var socket = io.connect(@json($socketHost),{
         });
         socket.on('error', function(data) {
             console.log(data);
         });
         socket.on('videos', function(data){ //4
+            if (data.eventType === 'terminalStatus') {
+                return;
+            }
+
+            if (terminalKey && data.terminalKey && data.terminalKey !== terminalKey) {
+                return;
+            }
+
             if(data.statusCode === 200) {
                 console.log(data);
                 videoReset();
@@ -382,6 +395,9 @@
             getSource.setAttribute("src", result.video_url);
             getVideo.load();
             getVideo.play();
+            publishTerminalStatus('playing', {
+                video_title: result.title || result.deceased || result.name || '',
+            });
             fullScreen();
 
             document.querySelector('#image-wrap').style.display = 'none';
@@ -501,6 +517,31 @@
                 elem.requestFullscreen();
             }
         }
+
+        function publishTerminalStatus(status, extra = {}) {
+            if (!terminalKey) {
+                return;
+            }
+
+            fetch(statusUrl, {
+                method: 'POST',
+                body: JSON.stringify({
+                    terminal_key: terminalKey,
+                    status: status,
+                    ...extra,
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'X-CSRF-Token': csrfToken,
+                },
+            }).catch(() => {});
+        }
+
+        publishTerminalStatus('online');
+        setInterval(function () {
+            publishTerminalStatus('heartbeat');
+        }, 30000);
 
         window.addEventListener("keydown", (event) => {
             switch (event.key) {
